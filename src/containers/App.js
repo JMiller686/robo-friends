@@ -15,11 +15,15 @@ class App extends Component {
 	}
 
 	async componentDidMount() {
-		
+		try {
+			const response = await fetch('https://jsonplaceholder.typicode.com/users');
+			const results = await response.json();
+			this.setState({robots: results});
+		} catch(err) {
+			alert("Something went wrong, please try again \n" + err)
+		}
 
-		const response = await fetch('https://jsonplaceholder.typicode.com/users');
-		const results = await response.json();
-		this.setState({robots: results});
+		
 	}
 
 	onSearchChange = (event) => {
