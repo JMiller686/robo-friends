@@ -22,8 +22,6 @@ class App extends Component {
 		} catch(err) {
 			alert("Something went wrong, please try again \n" + err)
 		}
-
-		
 	}
 
 	onSearchChange = (event) => {
